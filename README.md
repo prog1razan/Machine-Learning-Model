@@ -1,5 +1,3 @@
-# task2:Machine-Learning-Model
-
 # TASK2 : Machine-Learning-Model
 
 ## Table of Contents⚙️
