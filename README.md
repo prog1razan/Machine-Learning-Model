@@ -95,3 +95,43 @@ print(y_test)
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
+# Create a Logistic Regression model and Train it on the training data:
+# Convert 'Embarked' to binary using LabelEncoder if it has more than two unique values
+from sklearn.
+preprocessing import LabelEncoder
+le = LabelEncoder()
+y_encoded = le.fit_transform(data['Embarked'])
+
+# Split the data into training and testing sets (use y_encoded)
+X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.3, random_state=42)
+
+# Standardize features (optional but recommended for better performance)
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+# Create a Logistic Regression model
+model = LogisticRegression()
+
+# Train (fit) the model on the training data (use y_train which is now 1D)
+model.fit(X_train, y_train)
+
+print("Model training complete")
+5. Model Evaluation is crucial in machine learning to assess the performance of a trained model on testing data. The accuracy score, a common evaluation metric, measures the proportion of correct predictions out of all predictions. This helps to gauge the model's effectiveness, ensure it generalizes well to new data, and guide further improvements.
+from sklearn.metrics import accuracy_score
+
+#first let the model predict x_test
+#then use accuracy score to see the accuracy of the model
+#finally print the Accuracy.
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+
+print(f"Accuracy: {accuracy:.2f}")
+## File Structure 🏗️
+
+- README.md: This file, containing information about the project.
+- train.cvs: This file, containing the data we will train the model on .
+- Titanic_ML(task)S(1).ipynb: This file, containing project file contain live code.
+
+made with love by "she codes team "🤍😄
+raghad Alshammari - sadeem alresaini - razan alothaim.
